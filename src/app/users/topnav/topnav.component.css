@@ -1,0 +1,13 @@
+body,
+html {
+    font: bold 14px/1.4 'Open Sans', arial, sans-serif;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    position: relative;
+    height: 30px;
+}
