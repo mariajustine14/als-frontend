@@ -1,27 +1,40 @@
-<div> <img style="width:40%;" src="./assets/images/hart1.png" alt="">
-    <div class="card col-sm-7 shadow" style="margin-left:18%; margin-top:38px">
+<div  > <img style="width:40%;" src="./assets/images/hart1.png" alt="cdferf"> 
+    <div  class="card col-sm-7" style="margin-left:18%; margin-top:-8%" >
         <div class="card-body">
-            <h5 class="card-title " style="margin-left:53%">Login Admin</h5>
-            <img style="width:50%;margin-top:5%" src="./assets/images/login.svg" alt="">
-            <form class="col-sm-6" style="float:right;margin-top:3%">
-                <div class="form-group ">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div> <br>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                </div><br>
-                <button type="submit" class=" btn-grad" style=" width:240px; height: 40px;">login</button><br><br>
-                <button type="submit" class="btn btn-primary " style=" width:100px; height: 50px; margin-left:30px;" routerLink='/home'>Back</button><br><br>
+          <h5 accesskey="/user/login" class="card-title " style="margin-left:53%">Login</h5>
+          <img style="width:50%;margin-top:5%" src="./assets/images/login.svg" alt="">
+          
+          <form (ngSubmit)="user.valid && onLogin()" [formGroup]="user" class="col-sm-6" style="float:right;margin-top:3%">
+            <div class="form-group ">
+              
+              <input type="email" class="form-control" formControlName="email" 
+              [ngClass]="{'is-invalid' : user.get('email').touched && user.get('email').invalid}" placeholder="Enter email">
+              <div *ngIf="user.get('email').touched && user.get('email').invalid" class="invalid-feedback">
+                <p  class="validate" *ngIf="user.get('email').errors.required">Email is required</p>
+                <p  class="validate" *ngIf="user.get('email').errors.email">Email must be valid</p>
+              </div>
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+             
+              <input type="password" class="form-control"formControlName="password" 
+              [ngClass]="{'is-invalid' : user.get('password').touched && user.get('password').invalid}"placeholder="Password">
+              <div *ngIf="user.get('password').touched && user.get('password').invalid" class="invalid-feedback">
+                <p  class="validate" *ngIf="user.get('password').errors.required">Password is required</p>
+              </div>
+            </div> <br>
+           
+            <button type="submit" [disabled]="!user.valid" class="btn btn-primary " routerLink='/apartment-list'>login</button><br>
 
-            </form>
+          </form>
+      </div>
         </div>
+        
+    
     </div>
-</div>
 
-<p>changes</p>
-<div> <img style="width:40%;float:right;margin-top:-7%" src="./assets/images/hart2.png" alt=""></div>
+
+   
+ <div> <img style="width:40%;float:right;margin-top:-7%" src="./assets/images/hart2.png" alt="cdferf"></div>  
+
+   

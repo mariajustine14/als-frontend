@@ -12,6 +12,12 @@ import { LoginComponent } from './admin/login/login.component';
 import { ApartmentComponent } from './users/apartment/apartment.component';
 import { GetFooterComponent } from './users/get-footer/get-footer.component';
 import { AddComponent } from './add/add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddApartmentComponent } from './admin/add-apartment/add-apartment.component';
+import { SideNavComponent } from './admin/side-nav/side-nav.component';
+import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
+import { ApartmentListComponent } from './admin/apartment-list/apartment-list.component';
 
 
 @NgModule({
@@ -27,11 +33,17 @@ import { AddComponent } from './add/add.component';
     ApartmentComponent,
     GetFooterComponent,
     AddComponent,
+    AddApartmentComponent,
+    SideNavComponent,
+    AdminProfileComponent,
+    ApartmentListComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
