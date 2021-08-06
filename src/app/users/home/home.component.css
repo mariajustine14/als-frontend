@@ -1,4 +1,4 @@
-/* #home {
+#home {
     width: 100%;
     height: 60vh;
     background-size: cover;
@@ -10,99 +10,164 @@
 
 #home:before {
     content: "";
-    background-image: url("/assets/images/Apartment.jpeg ");
+    background-image: url("/assets/images/landing.jpg ");
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
+    height: 400px;
+    align-content: center;
 }
+
+
+/* section#home.d-flex.flex-column.justify-content-center.align-items-center::before {
+    padding-right: 50px;
+} */
 
 #home .container {
     z-index: 2;
 }
 
-#home h1 {
-    margin: 0 0 10px 0;
-    font-size: 48px;
+
+/* WHY-US */
+
+.why-us {
+    padding: 0 0 30px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.why-us .content {
+    padding: 30px;
+    background: dodgerblue;
+    border-radius: 4px;
+    color: #fff;
+    border-left-style: dashed;
+}
+
+.why-us .content h3 {
     font-weight: 700;
-    line-height: 56px;
-    color: white;
-    ;
+    font-size: 34px;
+    margin-bottom: 30px;
 }
 
-#home h2 {
-    color: white;
-    margin-bottom: 50px;
+.why-us .content p {
+    margin-bottom: 30px;
+}
+
+.why-us .content .more-btn {
+    display: inline-block;
+    background: palevioletred;
+    padding: 6px 30px 8px 30px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease-in-out 0.4s;
+}
+
+.why-us .content .more-btn i {
+    font-size: 14px;
+}
+
+.why-us .content .more-btn:hover {
+    color: dodgerblue;
+    background: azure;
+}
+
+.why-us .icon-boxes .icon-box {
+    text-align: center;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 100%;
+    border-left-style: groove;
+    border-left-color: dodgerblue;
+}
+
+.why-us .icon-boxes .icon-box i {
+    font-size: 40px;
+    color: dodgerblue;
+    margin-bottom: 30px;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
+.why-us .icon-boxes .icon-box p {
+    font-size: 15px;
+    color: #716f6f;
+}
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+
+.services .icon-box {
+    padding: 50px 20px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    text-align: center;
+    height: 200px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border-left-color: dodgerblue;
+    border-left-style: double;
+}
+
+.services .icon {
+    position: absolute;
+    top: -36px;
+    left: calc(50% - 36px);
+    transition: 0.2s;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 72px;
+    height: 72px;
+    background: palevioletred;
+}
+
+.services .icon i {
+    color: #fff;
     font-size: 24px;
+    line-height: 0;
 }
 
-@media (min-width: 1024px) {
-    #home {
-        background-attachment: fixed;
-    }
+.services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
-@media (max-width: 1024px),
-(max-height: 768px) {
-    #home {
-        margin-bottom: -150px;
-        height: 80vh;
-    }
+.services .title a {
+    color: #343a40;
 }
 
-@media (max-width: 768px) {
-    #home {
-        height: 80vh;
-    }
-    #home h1 {
-        font-size: 28px;
-        line-height: 36px;
-    }
-    #home h2 {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 30px;
-    }
+.services .icon-box:hover .icon {
+    background: #fff;
+    border: 2px solid palevioletred;
 }
 
-@media (max-height: 640px) {
-    #home {
-        height: 120vh;
-    }
+.services .icon-box:hover .icon i {
+    color: palevioletred;
 }
 
-@media (min-width: 1024px) {
-    #home {
-        background-attachment: fixed;
-    }
+.services .icon-box:hover .title a {
+    color: palevioletred;
 }
 
-@media (max-width: 1024px),
-(max-height: 768px) {
-    #home {
-        margin-bottom: -150px;
-        height: 80vh;
-    }
+.services .description {
+    line-height: 24px;
+    font-size: 14px;
 }
-
-@media (max-width: 768px) {
-    #home {
-        height: 80vh;
-    }
-    #home h1 {
-        font-size: 28px;
-        line-height: 36px;
-    }
-    #home h2 {
-        font-size: 18px;
-        line-height: 24px;
-        margin-bottom: 30px;
-    }
-}
-
-@media (max-height: 640px) {
-    #home {
-        height: 120vh;
-    }
-} */

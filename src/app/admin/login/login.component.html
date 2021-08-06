@@ -1,19 +1,17 @@
-<div  > <img style="width:40%;" src="./assets/images/hart1.png" alt="cdferf"> 
-    <div  class="card col-sm-7" style="margin-left:18%; margin-top:-8%" >
-        <div class="card-body">
-          <h5 accesskey="/user/login" class="card-title " style="margin-left:53%">Login</h5>
-          <img style="width:50%;margin-top:5%" src="./assets/images/login.svg" alt="">
-          
-          <form (ngSubmit)="user.valid && onLogin()" [formGroup]="user" class="col-sm-6" style="float:right;margin-top:3%">
+<div class="card col-sm-7" style="margin-left:18%; margin-top:38px; background-color: azure; border-right: 4px solid #0a718a    ; border-left: 4px solid #48AAF6; ">
+    <div class="card-body">
+        <h4 accesskey="/user/login" class="card-title " style="margin-left:53%; color: dodgerblue;">Admin Login</h4>
+        <img style="width:50%;margin-top:5%" src="./assets/images/login.svg" alt="">
+
+        <form (ngSubmit)="user.valid && onLogin()" [formGroup]="user" class="col-sm-6" style="float:right;margin-top:3%">
             <div class="form-group ">
-              
-              <input type="email" class="form-control" formControlName="email" 
-              [ngClass]="{'is-invalid' : user.get('email').touched && user.get('email').invalid}" placeholder="Enter email">
-              <div *ngIf="user.get('email').touched && user.get('email').invalid" class="invalid-feedback">
-                <p  class="validate" *ngIf="user.get('email').errors.required">Email is required</p>
-                <p  class="validate" *ngIf="user.get('email').errors.email">Email must be valid</p>
-              </div>
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                <input type="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid' : user.get('email').touched && user.get('email').invalid}" placeholder="Enter email">
+                <div *ngIf="user.get('email').touched && user.get('email').invalid" class="invalid-feedback">
+                    <p class="validate" *ngIf="user.get('email').errors.required">Email is required</p>
+                    <p class="validate" *ngIf="user.get('email').errors.email">Email must be valid</p>
+                </div>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
              
@@ -33,8 +31,14 @@
     
     </div>
 
+                <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid' : user.get('password').touched && user.get('password').invalid}" placeholder="Password">
+                <div *ngIf="user.get('password').touched && user.get('password').invalid" class="invalid-feedback">
+                    <p class="validate" *ngIf="user.get('password').errors.required">Password is required</p>
+                </div>
+            </div> <br>
 
-   
- <div> <img style="width:40%;float:right;margin-top:-7%" src="./assets/images/hart2.png" alt="cdferf"></div>  
+            <button type="submit" [disabled]="!user.valid" class="btn btn-grad" style=" width:240px; height: 50px; " routerLink='/apartment-list'>login</button><br>
 
-   
+        </form>
+    </div>
+</div>
