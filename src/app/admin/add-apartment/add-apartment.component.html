@@ -1,53 +1,140 @@
 <app-side-nav></app-side-nav>
-<div id="profile-edit-save">
-    <button id="editSave">Add Apartment</button>
-</div>
-<div id="profile-edit-area">
-    <form>
+
+<div id="profile-edit-area" class="col-sm-9 container  bg-white shadow-lg text-justify" style="margin-left:33%; margin-top:8%">
+    <div>
+        <h1 class="text-center mt-5" style="font-family:'sans-serif">Add Apartment</h1>
+        <hr>
+    </div>
+    <form (ngSubmit)="apartment.valid && addApartment()" [formGroup]="apartment">
         <div id="edit-area-left">
             <table>
                 <tbody>
                     <tr>
-                        <td class="edit-title">Apartment Name: </td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">image</td>
+                        <td><input type="text" formControlName="image" [ngClass]="{'is-invalid' : apartment.get('image').touched && apartment.get('image').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('image').touched && apartment.get('image').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('image').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="edit-title">Apartment Owner: </td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">Apartment name</td>
+                        <td><input type="text" formControlName="name" [ngClass]="{'is-invalid' : apartment.get('name').touched && apartment.get('name').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('name').touched && apartment.get('name').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('name').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="edit-title">Available Rooms: </td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">Available rooms:</td>
+                        <td><input type="number" formControlName="number_of_rooms" [ngClass]="{'is-invalid' : apartment.get('number_of_rooms').touched && apartment.get('number_of_rooms').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('number_of_rooms').touched && apartment.get('number_of_rooms').invalid"
+                                class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('number_of_rooms').errors.required">This field
+                                    is required</p>
+                            </div>
+                        </td>
                     </tr>
-
-
+                    <tr>
+                        <td class="edit-title">Map:</td>
+                        <td><input type="text" formControlName="map" [ngClass]="{'is-invalid' : apartment.get('map').touched && apartment.get('map').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('map').touched && apartment.get('map').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('map').errors.required">This field is required</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edit-title">Comfort room:</td>
+                        <td><input type="text" formControlName="cr" [ngClass]="{'is-invalid' : apartment.get('cr').touched && apartment.get('cr').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('cr').touched && apartment.get('cr').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('cr').errors.required">This field is required</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edit-title">Price</td>
+                        <td><input type="number" formControlName="price" [ngClass]="{'is-invalid' : apartment.get('price').touched && apartment.get('price').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('price').touched && apartment.get('price').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('price').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
         <div id="edit-area-right">
             <table>
                 <tbody>
-                   
+
                     <tr>
-                        <td class="edit-title">Apartment Owner:</td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">Apartment owner</td>
+                        <td><input type="text" formControlName="owner" [ngClass]="{'is-invalid' : apartment.get('owner').touched && apartment.get('owner').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('owner').touched && apartment.get('owner').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('owner').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="edit-title">Location:</td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">Address: </td>
+                        <td><input type="text" formControlName="location" [ngClass]="{'is-invalid' : apartment.get('location').touched && apartment.get('location').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('location').touched && apartment.get('location').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('location').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="edit-title">Contact Number:</td>
-                        <td><input type="text" class="profileInputBox" /></td>
+                        <td class="edit-title">Contact Number: </td>
+                        <td><input type="number" formControlName="contact" [ngClass]="{'is-invalid' : apartment.get('contact').touched && apartment.get('contact').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('contact').touched && apartment.get('contact').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('contact').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edit-title">kitchen: </td>
+                        <td><input type="text" formControlName="room1" [ngClass]="{'is-invalid' : apartment.get('room1').touched && apartment.get('room1').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('room1').touched && apartment.get('room1').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('room1').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edit-title">Bedroom: </td>
+                        <td><input type="text" formControlName="room2" [ngClass]="{'is-invalid' : apartment.get('room2').touched && apartment.get('room2').invalid}"
+                                class="profileInputBox" />
+                            <div *ngIf="apartment.get('room2').touched && apartment.get('room2').invalid" class="invalid-feedback">
+                                <p class="validate" *ngIf="apartment.get('room2').errors.required">This field is
+                                    required</p>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <div id="profile-update-save " class="pb-5" style="margin-top:15%;">
+                <button id="cancelChanges" class="btn btn-danger mr-1" style="margin-left:20px;"  routerLink="/apartment-list" >Cancel</button>
+
+            <button id="saveChanges" class="btn btn-primary"  type="submit"
+                [disabled]="!apartment.valid">Add Apartment</button>
+            
+        </div>
+
     </form>
-</div>
-
-<div id="profile-update-save">
-
-    <button id="saveChanges" style="margin-left:58pc;margin-top:10pc;">Add Apartment</button>
-    <button id="cancelChanges" style="margin-left:53pc; margin-top:-30px;" routerlink="apartment-list">Cancel</button>
 </div>

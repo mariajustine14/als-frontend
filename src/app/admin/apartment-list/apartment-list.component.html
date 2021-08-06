@@ -1,132 +1,74 @@
 <app-side-nav></app-side-nav>
-
-
-<body class="mat-typography">
-  <div class="container-fluid" style="margin-left: 2%;">
-    <div class="row" style="margin-right: 2%;">
-
-     
-      <div class="col-md-3 col-lg-2 px-0 position-fixed h-100 bg-white shadow-sm sidebar" id="sidebar"
-        style="margin-top: auto;margin-left: 50;">
-        <h1 class=" text-primary d-flex my-4 justify-content-center"><b>ADMINISTRATOR</b></h1>
-        <img class="ml-4" style="width:150px" src="./assets/images/avatar.jpg" alt="">
-        <div class="list-group rounded-0">
-          <a class="list-group-item list-group-item-action active border-0 d-flex align-items-center ">
-            <span class="bi bi-border-all" style="margin-left: 5%;"></span>
-            <span class="ml-2 btn"  routerLink="/apartment-list">Apartment</span>
-          </a>
-          <a  class=" btn list-group-item list-group-item-action border-0 align-items-center">
-            <span class="bi bi-box text-info"></span>
-            <span  class="ml-2" routerLink="/add-apartment" >Add Apartment</span>
-          </a>
-        
-          <a href='admin-profile' class=" btn list-group-item list-group-item-action border-0 align-items-center">
-            <span class="bi bi-gear text-primary"></span>
-            <span class="ml-2">Settings</span>
-          </a>
-
-          <button class=" btn list-group-item list-group-item-action border-0 d-flex " data-toggle="collapse"
-            data-target="#sale-collapse">
-            <div>
-              <span class="bi bi-person text-primary"></span>
-              <span class="ml-2">Logout</span>
-            </div>
-
-          </button>
-        </div>
-      </div>
-
- 
-      <div class="w-100 vh-100 position-fixed overlay d-none" id="sidebar-overlay"></div>
-   
-      <div class="col-md-9 col-lg-10 ml-md-auto px-0">
-
-      </div>
-    </div>
-  </div>
-
-</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="w-100 vh-100 position-fixed overlay d-none" id="sidebar-overlay"></div>
 <!-- note: in the layout margin auto is the key as sidebar is fixed -->
 <div class="col-md-9 col-lg-10 ml-md-auto px-0">
   <!-- top nav -->
 
   <!-- main content -->
-  <main class="container-fluid " style="margin-top:4%;">
-    <div class="jumbotron jumbotron-fluid rounded bg-white border-0 shadow-sm border-left px-4">
-      <div class="container">
-        <h1 class="display-2 mb-4 text-info" style="margin-top: -2%;"><b>Apartment List</b></h1>
-        <div class="card-deck" style="max-width: 90%;">
-          <div class="card" style="max-width: 80%;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu </h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-
+  <main class="container-fluid " style="margin-top:5%;">
+    <div class="card col-sm-9 container bg-light shadow-lg text-justify ">
+      <div *ngIf="!apartmentDetails">
+        <h1 class="text-center mt-5" style="font-family:'sans-serif">Apartment List</h1>
+        <hr>
+        <div class="row">
+          <div style="margin-bottom:3%" class="col-6 col-md-4" *ngFor=" let apart of myApartment">
+            <div class="card">
+              <img style=" height: 90%;" class="card-img-top" src={{apart.image}} alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{apart.name}} </h5>
+                <h5 class="card-title text-center" hidden>{{apart.id}} </h5>
+                <a class="btn btn-primary mt-4 text-white" (click)="showDetails(apart.id)">View Details</a>
+                <div class="float-right modify">
+                  <!-- <i class="bi bi-pencil-square btn btn-outline-info mt-4 mr-1" routerLink='/update-apartment/{{ apart.id }}' ></i> -->
+                  <i class="bi bi-trash-fill btn btn-outline-danger mt-4" (click)="onDelete(apart.id)"></i>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu </h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu</h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-            </div>
-          </div>
-
-        </div><br>
-
-        <!-- second pic -->
-
-        <div class="card-deck" style="max-width: 90%;">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu</h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu </h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="./assets/images/pic1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h3 class="card-title">Happy Homes Liloan Cebu </h3>
-              <a href="#" class="btn btn-info">Action</a>
-
-            </div>
-          </div>
-
         </div>
+      </div>
+    </div>
+    <div class="card col-sm-9 container bg-light shadow-lg text-justify">
+      <div *ngIf="apartmentDetails" class="card-siya">
+        <h1 class="text-center mt-5" style="font-family:'sans-serif">Apartment Details</h1>
+        <hr>
+        <div *ngFor="let detail of displayDetails">
+          <div class="card-body">
+            <div style="width:40%">
+              <img class="card-img-top" src={{detail.image}} alt="Card image cap">
+              <h3 class="text-center mt-3">{{detail.name}}</h3>
+              <div>
+                <p class=" mt-3">
+                  <span class="font-weight-bold">Apartment Owner : </span>{{detail.owner}}</p>
+                <p class=" mt-3">
+                  <span class="font-weight-bold">Address : </span>{{detail.location}}</p>
+                <p class=" mt-3">
+                  <span class="font-weight-bold">Contact : </span>{{detail.contact}}</p>
+                <p class=" mt-3">
+                  <span class="font-weight-bold">Price : </span>PHP {{detail.price}}</p>
+              </div>
+            </div>
+            <div class="four-pics">
+              <div class="row1">
+                <div class="column">
+                  <img class="card-img-top" style="margin:10px" src={{detail.map}} alt="Card image cap">
+                  <img class="card-img-top" src={{detail.room1}} alt="Card image cap">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="column">
+                  <img class="card-img-top" style="margin:10px" src={{detail.cr}} alt="Card image cap">
+                  <img class="card-img-top" src={{detail.room2}} alt="Card image cap">
+                </div>
+              </div>
+            </div>
+
+            <div>
+
+            </div>
+          </div>
+        </div>
+        <button style="margin-left:90%;margin-top:5%;" class="btn btn-primary" (click)="back()">back</button>
+      </div>
+    </div>
+  </main>

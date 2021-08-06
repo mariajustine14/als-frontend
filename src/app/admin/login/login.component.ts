@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.token = response;
       window.localStorage.setItem('token', this.token.token);
       // redirect to admin page
-     // this.router.navigate(['/account']);
+     this.router.navigate(['/apartment-list']);
     },
     errors=>{
       alert('invalid credential');

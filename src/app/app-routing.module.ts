@@ -12,7 +12,7 @@ import { GetFooterComponent } from './users/get-footer/get-footer.component';
 import { ApartmentListComponent } from './admin/apartment-list/apartment-list.component';
 import { AddApartmentComponent } from './admin/add-apartment/add-apartment.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
-
+import { UpdateApartmentComponent } from './admin/update-apartment/update-apartment.component';
 const routes: Routes = [
   { path: '', redirectTo: 'get-started', pathMatch: 'full'},
   { path: 'topnav', component: TopnavComponent, pathMatch: 'full'},
@@ -25,7 +25,9 @@ const routes: Routes = [
   {path:'get-footer', component: GetFooterComponent,pathMatch:'full'},
   {path: 'apartment-list' , component: ApartmentListComponent, pathMatch: 'full'},
   {path: 'add-apartment' , component:  AddApartmentComponent , pathMatch: 'full'},
-  {path: 'admin-profile' , component:   AdminProfileComponent , pathMatch: 'full'}
+  {path: 'admin-profile' , component:   AdminProfileComponent , pathMatch: 'full'},
+  {path: 'update-apartment' , component:  UpdateApartmentComponent, pathMatch: 'full'}
+  
   
   
 ];
