@@ -69,29 +69,7 @@
     }
 
 
-    #saveChanges {
-        display: block;
-        margin: 0 auto;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 15px;
-        background-color: #2699c7;
-        color: #fff;
-        font-size: 14px;
-        outline: none;
-    }
 
-    #cancelChanges {
-        display: block;
-        margin: 0 auto;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 15px;
-        background-color: #737b7e;
-        color: #fff;
-        font-size: 14px;
-        outline: none;
-    }
 
     #profile-edit-area {
         width: 800px;
@@ -148,4 +126,8 @@
     #edit-area-right textarea {
         height: 200px;
         resize: none;
+    }
+
+    .invalid-feedback {
+        margin-top: -10px;
     }

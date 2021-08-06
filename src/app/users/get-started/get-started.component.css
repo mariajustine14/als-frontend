@@ -12,11 +12,11 @@
     content: "";
     background-image: url("/assets/images/Apartment.jpeg ");
     position: absolute;
-    bottom: 0;
+    bottom: -55%;
     top: 0;
     left: 0;
     right: 0;
-    height: 600px;
+  
 }
 
 #home .container {

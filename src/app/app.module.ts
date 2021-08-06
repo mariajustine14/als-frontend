@@ -13,12 +13,18 @@ import { ApartmentComponent } from './users/apartment/apartment.component';
 import { GetFooterComponent } from './users/get-footer/get-footer.component';
 import { AddComponent } from './add/add.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { AddApartmentComponent } from './admin/add-apartment/add-apartment.component';
 import { SideNavComponent } from './admin/side-nav/side-nav.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { ApartmentListComponent } from './admin/apartment-list/apartment-list.component';
+import { UpdateApartmentComponent } from './admin/update-apartment/update-apartment.component';
+import {  RouterModule, Routes} from '@angular/router'
 
+const appRoutes: Routes = [
+  { path: '', component:ApartmentComponent },
+  { path:'update-apartment/:id', component:UpdateApartmentComponent}
+]
 
 @NgModule({
   declarations: [
@@ -37,13 +43,15 @@ import { ApartmentListComponent } from './admin/apartment-list/apartment-list.co
     SideNavComponent,
     AdminProfileComponent,
     ApartmentListComponent,
+    UpdateApartmentComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

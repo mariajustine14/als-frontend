@@ -1,39 +1,68 @@
 <app-topnav></app-topnav>
-
-
-
-
-
-<div class="row " style="margin-top: 30px; margin-left: 230px; ">
-    <div class="col-sm-3 ">
-        <div class="card ">
-            <div class="card-body ">
-                <h5 class="card-title ">Special title treatment</h5>
-                <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
-                <a class="btn btn-primary ">Go somewhere</a>
+      <main class="container-fluid " style="margin-top:5%;">
+        <div class="card col-sm-12 container bg-light shadow-lg text-justify ">
+          <div *ngIf="!apartmentDetails">
+            <h1 class="text-center mt-5" style="font-family:'sans-serif">Apartment List</h1>
+        <hr>
+            <div class="row">
+              <div style="margin-bottom:3%" class="col-6 col-md-4" *ngFor=" let apart of myApartment">
+                <div class="card">
+                  <img style=" height: 90%;" class="card-img-top" src={{apart.image}} alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">{{apart.name}} </h5>
+                    <h5 class="card-title text-center" hidden>{{apart.id}} </h5>
+                    <a class="btn btn-primary mt-4 text-white" (click)="showDetails(apart.id)">View Details</a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="col-sm-3 ">
-        <div class="card ">
-            <div class="card-body ">
-                <h5 class="card-title ">Special title treatment</h5>
-                <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
-                <a class="btn btn-primary ">Go somewhere</a>
+        <div class="card col-sm-9 container bg-light shadow-lg text-justify">
+          <div *ngIf="apartmentDetails" class="card-siya">
+            <h1 class="text-center mt-5" style="font-family:'sans-serif">Apartment Details</h1>
+            <hr>
+            <div *ngFor="let detail of displayDetails">
+              <div class="card-body">
+                <div style="width:45%">
+                  <img class="card-img-top" src={{detail.image}} alt="Card image cap">
+                  <h3 class="text-center mt-3">{{detail.name}}</h3>
+                  <div>
+                    <p class=" mt-3">
+                      <span class="font-weight-bold">Apartment Owner : </span>{{detail.owner}}</p>
+                    <p class=" mt-3">
+                      <span class="font-weight-bold">Address : </span>{{detail.location}}</p>
+                    <p class=" mt-3">
+                      <span class="font-weight-bold">Contact : </span>{{detail.contact}}</p>
+                    <p class=" mt-3">
+                      <span class="font-weight-bold">Price : </span>PHP {{detail.price}}</p>
+                  </div>
+                </div>
+                <div class="four-pics">
+                  <div class="row1">
+                    <div class="column">
+                    <a href="https://bit.ly/3fTX3iv">  <img class="card-img-top" style="margin:10px" src={{detail.map}} alt="Card image cap"></a> 
+                      <img class="card-img-top" src={{detail.room1}} alt="Card image cap">
+                    </div>
+                  </div>
+                  <div class="row2">
+                    <div class="column">
+                      <img class="card-img-top" style="margin:10px" src={{detail.cr}} alt="Card image cap">
+                      <img class="card-img-top" src={{detail.room2}} alt="Card image cap">
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+    
+                </div>
+              </div>
             </div>
+            <button style="margin-left:90%;margin-top:5%;" class="btn btn-primary" (click)="back()">back</button>
+          </div>
         </div>
-    </div>
-    <div class="col-sm-3 ">
-        <div class="card ">
-            <div class="card-body ">
-                <h5 class="card-title ">Special title treatment</h5>
-                <p class="card-text ">With supporting text below as a natural lead-in to additional content.</p>
-                <a class="btn btn-primary ">Go somewhere</a>
-            </div>
-        </div>
-    </div>
+      </main>
 
-</div>
 
 
 <br> <br> <br> <br> <br> <br>
